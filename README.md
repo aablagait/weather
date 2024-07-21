@@ -16,3 +16,23 @@
 
 ## Быстрый старт
 
+1. Клонируйте репозиторий с git@github.com:aablagait/weather.git
+2. Создайте файл .env по примеру файла .env_example. В нем надо указать 
+API_KEY сервиса прогноза погоды, для этого необходимо зарегестрироваться
+на сайте https://openweathermap.org/
+3. Запустить docker compose (Предварительно необходимо установить Docker
+на ваш компьютер)
+```bash
+docker compose up
+```
+4. после запуска контейнеров необходимо применить миграции
+
+```bash
+docker compose exec web_app_weather python3 web_app_weather/manage.py migrate
+```
+
+## Обратная связь
+Если у вас есть вопросы или предложения, пожалуйста, 
+создайте issue или pull request в этом репозитории.
+Или напишите мне в telegram: aablagait
+
