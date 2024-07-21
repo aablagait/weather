@@ -23,7 +23,7 @@ def get_weather_forecast(city):
         response.raise_for_status()
         forecast_data = response.json()
 
-        for forecast in forecast_data['list'][:1]:
+        for forecast in forecast_data['list'][:9]:
             dt_txt = forecast['dt_txt']
             temp = forecast['main']['temp']
             feels_like = forecast['main']['feels_like']

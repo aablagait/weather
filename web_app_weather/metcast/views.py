@@ -23,7 +23,8 @@ class WeatherCreateView(CreateView):
             weather.count_call += 1
             weather.save()
             return redirect('metcast:detail', city=weather.city)
-        return super().post(request, *args, **kwargs)
+        weather = Weather.objects.create(city=city)
+        return redirect('metcast:detail', city=weather.city)
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
